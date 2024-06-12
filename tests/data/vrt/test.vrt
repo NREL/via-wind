@@ -1,0 +1,21 @@
+<VRTDataset rasterXSize="135" rasterYSize="135">
+  <SRS dataAxisToSRSAxisMapping="1,2">PROJCS["USA_Contiguous_Albers_Equal_Area_Conic",GEOGCS["NAD83",DATUM["North_American_Datum_1983",SPHEROID["GRS 1980",6378137,298.257222101004,AUTHORITY["EPSG","7019"]],AUTHORITY["EPSG","6269"]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4269"]],PROJECTION["Albers_Conic_Equal_Area"],PARAMETER["latitude_of_center",37.5],PARAMETER["longitude_of_center",-96],PARAMETER["standard_parallel_1",29.5],PARAMETER["standard_parallel_2",45.5],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH]]</SRS>
+  <GeoTransform> -6.7230600000000000e+05,  3.0000000000000000e+01,  0.0000000000000000e+00,  4.1340500000000000e+05,  0.0000000000000000e+00, -3.0000000000000000e+01</GeoTransform>
+  <VRTRasterBand dataType="Float64" band="1">
+    <ColorInterp>Gray</ColorInterp>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="1">tifs/fov-pct_gid1.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="135" RasterYSize="135" DataType="Float64" BlockXSize="2048" BlockYSize="2048" />
+      <SrcRect xOff="0" yOff="0" xSize="135" ySize="135" />
+      <DstRect xOff="0" yOff="0" xSize="135" ySize="135" />
+    </SimpleSource>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="1">tifs/fov-pct_gid2.tif</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="135" RasterYSize="135" DataType="Float64" BlockXSize="2048" BlockYSize="2048" />
+      <SrcRect xOff="0" yOff="0" xSize="135" ySize="135" />
+      <DstRect xOff="0" yOff="0" xSize="135" ySize="135" />
+    </SimpleSource>
+  </VRTRasterBand>
+</VRTDataset>

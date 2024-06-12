@@ -1,0 +1,3 @@
+bpy>=3.5.0,<3.7
+fake-bpy-module-latest>=20230829,<20230830
+nrel-gaps @ git+ssh://git@github.com/NREL/gaps.git@v0.6.9

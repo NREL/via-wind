@@ -1,0 +1,31 @@
+{
+  "camera": {
+    "film_width_mm": 35,
+    "height_m": 1.75,
+    "lens_mm": 50,
+    "output_resolution_height": 1080,
+    "output_resolution_width": 1920
+  },
+  "name": "test",
+  "turbine": {
+    "blade_chord_m": 1.5,
+    "distances_to_camera_m": [
+      150,
+      1000,
+      5000
+    ],
+    "hub_height_m": 70.0,
+    "obstruction_heights": [
+      0,
+      70
+    ],
+    "rotations": [
+      "FRONT",
+      "DIAGONAL",
+      "SIDE"
+    ],
+    "rotor_diameter_m": 60.0,
+    "rotor_overhang_m": 4.3,
+    "tower_diameter_m": 4.3
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "camera": {
+    "film_width_mm": 35,
+    "height_m": 1.75,
+    "lens_mm": 50,
+    "output_resolution_height": 1080,
+    "output_resolution_width": 1920
+  },
+  "name": "vitd-hh80-rd90",
+  "turbine": {
+    "blade_chord_m": 2.25,
+    "distances_to_camera_m": [
+      1000,
+      2000,
+      3000,
+      4000,
+      5000,
+      6000,
+      7000,
+      8000,
+      9000,
+      10000,
+      11000,
+      12000
+    ],
+    "hub_height_m": 80.0,
+    "obstruction_heights": [
+      0,
+      5,
+      15,
+      25,
+      35,
+      45,
+      55,
+      65,
+      75,
+      85,
+      95,
+      105,
+      115,
+      125
+    ],
+    "rotations": [
+      "FRONT",
+      "SIDE",
+      "DIAGONAL"
+    ],
+    "rotor_diameter_m": 90.0,
+    "rotor_overhang_m": 4.3,
+    "tower_diameter_m": 4.3
+  }
+}

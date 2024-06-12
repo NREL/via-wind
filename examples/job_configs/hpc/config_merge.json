@@ -1,0 +1,8 @@
+{
+  "execution_control": {
+    "allocation": "ALLOCATION",
+    "option": "kestrel",
+    "walltime": 1
+  },
+  "viewsheds_directory": "./viewsheds"
+}

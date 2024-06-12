@@ -1,0 +1,11 @@
+{
+  "camera": {
+    "film_width_mm": 35,
+    "height_m": 1.75,
+    "lens_mm": 50,
+    "output_resolution_height": 1080,
+    "output_resolution_width": 1920
+  },
+  "name": "test",
+  "turbine": "not-params"
+}

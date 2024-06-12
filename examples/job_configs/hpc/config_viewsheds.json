@@ -1,0 +1,14 @@
+{
+  "elev_fpath": "/PATH/TO/DSM.tif",
+  "execution_control": {
+    "allocation": "ALLOCATION",
+    "nodes": 4,
+    "option": "kestrel",
+    "walltime": 1
+  },
+  "fov_lkup_fpath": "./fov/combined_fov_lkup.csv",
+  "max_dist_km": 80,
+  "obstruction_interval_m": 10,
+  "turbines_fpath": "/PATH/TO/TURBINES.gpkg",
+  "viewer_height_m": 1.75
+}

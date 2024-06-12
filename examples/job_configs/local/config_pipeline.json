@@ -1,0 +1,19 @@
+{
+  "pipeline": [
+    {
+      "silouettes": "./config_silouettes.json"
+    },
+    {
+      "fov": "./config_fov.json"
+    },
+    {
+      "viewsheds": "./config_viewsheds.json"
+    },
+    {
+      "merge": "./config_merge.json"
+    },
+    {
+      "calibrate": "./config_calibrate.json"
+    }
+  ]
+}
