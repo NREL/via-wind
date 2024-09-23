@@ -197,8 +197,9 @@ def create_silouettes(config, out_path, job_name, _log_directory, _verbose):
     config : str
         Path to JSON configuration file.
     out_path : pathlib.Path
-        Output folder to which simulated turbine silouettes will be saved. If the folder
-        does not exist, it will be created. If the folder does exist, existing files may
+        Output parent directory. Results will be saved to a subfolder named based on
+        the input config file,  within this parent directory. If the subfolder does not
+        exist, it will be created. If the subfolder does exist, existing files may
         be overwritten.
     job_name : str
         Name of the job being run. This is typically a combination of the project

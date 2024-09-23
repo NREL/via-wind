@@ -3,12 +3,13 @@
 This library includes a Command Line Interface (CLI) named `via` that can be used to run a complete pipeline of visual impact analysis for dataset of turbine locations.
 
 ### Overview of Commands
-There are five commands in the `via` CLI, which are intended to be run in order, as described below:
+There are six commands in the `via` CLI, which are intended to be run in order, as described below:
 1. `silouettes`: Creates silouettes of simplified 3D models of turbine at various distances, orientations, and levels of obstruction from the viewer. Configuration of the turbine dimensions and other parameters is provided by the user, and can be performed for multiple configuration files at a time.
 2. `fov`: Analyzes the output images from the `silouettes` command to determine the percent of a viewer's field-of-view  (FOV)that is occupied by the turbine model in each of the output images. The output is a CSV  that contains a lookup table for determining the FOV of a turbine based on its dimensions, distance from the viewer, orientation from the viewer, and how much of the turbine is visible based on other visual screening or obstructions.
 3. `viewsheds`: Given an input turbine vector GIS dataset, a Digital Surface Model (DSM) raster GIS dataset, and a small number of other user-input parameters, produces a raster for each turbine identifying the percent FOV that the turbine occupies for a hypothetical viewer in each cell of the surrounding area.
 4. `merge`: Merges and sums the output rasters from the `viewsheds` command, to summarize the cumulative percent FOV occupied by all turbines at each location analyzed. The output is a seamless raster covering the area around the input turbines.
 5. `calibrate`: Calibrates the cumulative FOV percent raster from `merge` and converts values to a scale of visual impact, ranging from `0` (No Turbines Visible) to `4` (High Visual Impact)
+6. `mask`: This command can be run optionally to apply a "no visibility" mask to one or both of the outputs from the `merge` command or the `calbrate` command. This is useful in cases where you used a DSM for the `viewsheds` command and want to force set the visibility percent or rating to zero in areas such as forests, where the results will be based on a top-of-canopy view rather than the view below th canopy from the forest floor.
 
 ### Running Commands
 The `via` CLI is built upon the `gaps` package, which is a framework intended to enable scaling of geospatial python models to leverage High Performance Computing (HPC) systems.

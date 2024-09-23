@@ -1,0 +1,4 @@
+{
+  "input_raster": "./viewsheds_calibrated/visual_impact.tif",
+  "mask_raster": "/PATH/TO/NO_VISIBILITY_MASK.tif"
+}

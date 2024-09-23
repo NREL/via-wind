@@ -84,8 +84,9 @@ def run(merge_directory, out_dir, max_workers=None, _local=True):
     merge_directory : str
         Path to directory of merged viewshed rasters created by merge command.
     out_dir : str
-        Output folder to which simulated turbine silouettes will be saved. If the folder
-        does not exist, it will be created. If the folder does exist, existing files may
+        Output parent directory. Results will be saved to a subfolder named
+        "viewsheds_calibrated" within this parent directory. If the subfolder does not
+        exist, it will be created. If the subfolder does exist, existing files may
         be overwritten.
     max_workers : [int, NoneType], optional
         Maximum number of workers to use for multiprocessing, by default None, which
@@ -232,5 +233,5 @@ if __name__ == "__main__":
     try:
         main(obj={})
     except Exception:
-        LOGGER.exception("Error running via-wind fov CLI.")
+        LOGGER.exception("Error running via-wind calibrate CLI.")
         raise
