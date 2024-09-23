@@ -435,5 +435,52 @@ def test_calibrate_happy(test_cli_runner, test_data_dir):
         assert np.array_equal(expected_array, result_array)
 
 
+def test_mask_happy(test_cli_runner, test_data_dir):
+    """
+    Integration test for the mask command. Tests that it produces the expected
+    output for known inputs.
+    """
+
+    with tempfile.TemporaryDirectory() as tempdir:
+        tempdir_path = Path(tempdir)
+
+        # set up config for merge step
+        in_raster = test_data_dir.joinpath(
+            "calibrate", "expected_results/visual_impact.tif"
+        )
+        mask_raster = test_data_dir.joinpath(
+            "mask", "no_vis_mask.tif"
+        )
+
+        config_data = {
+            "input_raster": in_raster.as_posix(),
+            "mask_raster": mask_raster.as_posix(),
+        }
+        # write to json
+        config_path = tempdir_path.joinpath("config.json")
+        with open(config_path, "w") as f:
+            json.dump(config_data, f)
+
+        result = test_cli_runner.invoke(
+            main,
+            ["mask", "-c", config_path.as_posix()],
+        )
+        assert result.exit_code == 0
+
+        output_path = tempdir_path.joinpath("mask")
+        masked_tif = output_path.joinpath(in_raster.name)
+        assert masked_tif.exists(), f"Expected output raster {masked_tif} not created"
+
+        expected_mask_tif = test_data_dir.joinpath(
+            "mask", "expected_results", "visual_impact.tif"
+        )
+        with rasterio.open(expected_mask_tif, "r") as rast:
+            expected_array = rast.read()
+
+        with rasterio.open(masked_tif, "r") as rast:
+            result_array = rast.read()
+
+        assert np.array_equal(expected_array, result_array)
+
 if __name__ == "__main__":
     pytest.main([__file__, "-s", "--skip_content_check"])
