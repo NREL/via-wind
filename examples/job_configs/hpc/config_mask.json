@@ -1,0 +1,9 @@
+{
+  "execution_control": {
+    "allocation": "ALLOCATION",
+    "option": "kestrel",
+    "walltime": 1
+  },
+  "input_raster": "./viewsheds_calibrated/visual_impact.tif",
+  "mask_raster": "/PATH/TO/NO_VISIBILITY_MASK.tif"
+}
