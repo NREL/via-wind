@@ -78,8 +78,9 @@ def run(viewsheds_directory, out_dir, block_size=3600, max_workers=None, _local=
     viewsheds_directory : str
         Path to directory containing viewshed rasters created by viewsheds command.
     out_dir : str
-        Output folder to which simulated turbine silouettes will be saved. If the folder
-        does not exist, it will be created. If the folder does exist, existing files may
+        Output parent directory. Results will be saved to a subfolder named
+        "viewsheds_merge" within this parent directory. If the subfolder does not
+        exist, it will be created. If the subfolder does exist, existing files may
         be overwritten.
     block_size : int, optional
         Size of blocks used for mosaicking overlapping viewshed tifs, by default 3600.
@@ -175,5 +176,5 @@ if __name__ == "__main__":
     try:
         main(obj={})
     except Exception:
-        LOGGER.exception("Error running via-wind fov CLI.")
+        LOGGER.exception("Error running via-wind merge CLI.")
         raise

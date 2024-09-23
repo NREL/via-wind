@@ -529,5 +529,5 @@ if __name__ == "__main__":
     try:
         main(obj={})
     except Exception:
-        LOGGER.exception("Error running via-wind fov CLI.")
+        LOGGER.exception("Error running via-wind viewshed CLI.")
         raise

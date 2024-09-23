@@ -167,10 +167,11 @@ def run(
     Parameters
     ----------
     silouette_directories : List[str]
-
+        List of input directories containing silouette images.
     out_dir : str
-        Output folder to which simulated turbine silouettes will be saved. If the folder
-        does not exist, it will be created. If the folder does exist, existing files may
+        Output parent directory. Results will be saved to a subfolder named
+        "fov" within this parent directory. If the subfolder does not
+        exist, it will be created. If the subfolder does exist, existing files may
         be overwritten.
     _log_directory : str
         Path to log output directory.
