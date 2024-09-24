@@ -32,6 +32,7 @@ GEOTIFF_PROFILE = {
     "height": None,
     "crs": None,
     "transform": None,
+    "BIGTIFF": "YES"
 }
 
 VALID_DTYPES = (
