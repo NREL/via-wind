@@ -9,8 +9,8 @@ from shapely import geometry
 
 from via_wind.cli.viewshed import _split_turbines
 
-# note: only includes tests for _parse_silouette_directories. all other functionality
-# is tested through cli.test_cli.test_silouettes_happy
+# note: only includes tests for _split_turbines. all other functionality
+# is tested through cli.test_cli.test_viewsheds_happy
 
 
 @pytest.mark.parametrize(

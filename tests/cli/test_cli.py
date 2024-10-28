@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Tests for via_wind.gaps_cli"""
+"""Tests for via_wind Command Line Interface commands"""
 import tempfile
 from pathlib import Path
 import json
@@ -29,8 +29,8 @@ def test_silouettes_happy(
     skip_content_check,
 ):
     """
-    Happy path integration tests for the silouettes command. Checks that all expected
-    output images are created and that the output images match the expected images.
+    Happy path test for the silouettes command. Tests that it produces the expected
+    outputs for known inputs.
     """
     with tempfile.TemporaryDirectory() as tempdir:
         tempdir_path = Path(tempdir)
@@ -82,8 +82,8 @@ def test_silouettes_happy(
 
 def test_fov_happy(test_cli_runner, test_data_dir, check_files_match, compare_csv_data):
     """
-    Happy path integration tests for the fov command. Checks that the expected CSV is
-    created with the expected contents.
+    Happy path test for the fov command. Tests that it produces the expected outputs for
+    known inputs.
     """
 
     with tempfile.TemporaryDirectory() as tempdir:
@@ -127,8 +127,8 @@ def test_viewsheds_happy(
     test_cli_runner, test_data_dir, raster_params, check_files_match
 ):
     """
-    Integration test for the viewsheds command. Tests that it produces the expected
-    output for known inputs.
+    Happy path test for the viewsheds command. Tests that it produces the expected
+    outputs for known inputs.
     """
 
     max_distance_km = 2
@@ -297,8 +297,8 @@ def test_viewsheds_happy(
 
 def test_merge_happy(test_cli_runner, test_data_dir):
     """
-    Integration test for the merge command. Tests that it produces the expected
-    output for known inputs.
+    Happy path test for the merge command. Tests that it produces the expected
+    outputs for known inputs.
     """
 
     with tempfile.TemporaryDirectory() as tempdir:
@@ -360,8 +360,8 @@ def test_merge_happy(test_cli_runner, test_data_dir):
 
 def test_calibrate_happy(test_cli_runner, test_data_dir):
     """
-    Integration test for the calibrate command. Tests that it produces the expected
-    output for known inputs.
+    Happy path test for the calibrate command. Tests that it produces the expected
+    outputs for known inputs.
     """
 
     with tempfile.TemporaryDirectory() as tempdir:
@@ -437,8 +437,8 @@ def test_calibrate_happy(test_cli_runner, test_data_dir):
 
 def test_mask_happy(test_cli_runner, test_data_dir):
     """
-    Integration test for the mask command. Tests that it produces the expected
-    output for known inputs.
+    Happy path test for the mask command. Tests that it produces the expected output for
+    known inputs.
     """
 
     with tempfile.TemporaryDirectory() as tempdir:

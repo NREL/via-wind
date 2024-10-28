@@ -44,8 +44,8 @@ def test_progress_tracker():
 
 def test_progress_tracker_exception():
     """
-    Unit test for Progress Tracker class. Tests that if an exception occurs, it
-    is raised.
+    Unit test for Progress Tracker class. Tests that if an exception occurs, it is
+    raised.
     """
 
     with pytest.raises(ValueError, match="This is a test"):
@@ -55,16 +55,16 @@ def test_progress_tracker_exception():
 
 def test_verify_directory_happy(test_data_dir):
     """
-    Happy path test for verify_directory - test that it does not raise an
-    error when an existing folder is passed as input
+    Happy path test for verify_directory - test that it does not raise an error when an
+    existing folder is passed as input.
     """
     verify_directory(test_data_dir.as_posix())
 
 
 def test_verify_directory_error_file(test_config):
     """
-    Unit test for verify_directory - test that it raises TypeError with
-    expected message when passed a file as input.
+    Unit test for verify_directory - test that it raises TypeError with expected message
+    when passed a file as input.
     """
     input_directory = test_config.as_posix()
     with pytest.raises(
@@ -76,8 +76,8 @@ def test_verify_directory_error_file(test_config):
 
 def test_verify_viewsheds_directory_not_found(test_data_dir):
     """
-    Unit test for verify_directory - test that it raises FileNotFoundError
-    when the input folder does not exist.
+    Unit test for verify_directory - test that it raises FileNotFoundError when the
+    input folder does not exist.
     """
     input_directory = test_data_dir.as_posix() + "x"
     with pytest.raises(
@@ -89,16 +89,16 @@ def test_verify_viewsheds_directory_not_found(test_data_dir):
 
 def test_verify_file_happy(test_config):
     """
-    Happy path test for verify_file - test that it does not raise an
-    error when an existing folder is passed as input
+    Happy path test for verify_file - test that it does not raise an error when an
+    existing folder is passed as input.
     """
     verify_file(test_config.as_posix())
 
 
 def test_verify_file_error_file(test_data_dir):
     """
-    Unit test for verify_file - test that it raises TypeError with
-    expected message when passed a folder as input.
+    Unit test for verify_file - test that it raises TypeError with expected message when
+    passed a folder as input.
     """
     input_file = test_data_dir.as_posix()
     with pytest.raises(

@@ -24,7 +24,8 @@ def test_mean_image_intensity_math(test_data_dir):
 
 def test_mean_image_intensity_rgb(test_data_dir):
     """
-    See what happens when mean_image_intensity function is passed an RGB image
+    Unit test for mean_image_intensity function to verify that it raises a TypeError
+    when passed a non-grayscale (i.e., RGB) image.
     """
     image_path = test_data_dir.joinpath("intensity_images", "rgb", "cyan.png")
     with pytest.raises(TypeError) as excinfo:

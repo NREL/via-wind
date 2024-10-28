@@ -99,8 +99,7 @@ def camera_params_dict():
 @pytest.fixture
 def raster_params():
     """
-    Returns a dictionary containing parameters that can be used to mock
-    a raster.
+    Returns a dictionary containing parameters that can be used to mock a raster.
     """
     params = {
         "nodata": 0,

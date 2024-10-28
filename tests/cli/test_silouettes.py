@@ -10,9 +10,9 @@ from via_wind.cli.silouettes import _parse_silouette_configs
 
 def test_parse_silouette_configs_happy(test_data_dir, test_config):
     """
-    Happy path test for _parse_silouette_configs - test that it is able to parse
-    the three different types of expected inputs and return the correct number of
-    paths for each one.
+    Happy path test for _parse_silouette_configs - test that it is able to parse the
+    three different types of expected inputs and return the correct number of paths for
+    each one.
     """
     options = []
     # 1 - Search Pattern string as input
@@ -31,8 +31,8 @@ def test_parse_silouette_configs_happy(test_data_dir, test_config):
 
 def test_parse_silouette_configs_type_error_folder(test_data_dir):
     """
-    Unit test for _parse_silouette_configs - test that it raises TypeError with
-    expected message when passed a folder as input.
+    Unit test for _parse_silouette_configs - test that it raises TypeError with expected
+    message when passed a folder as input.
     """
     with pytest.raises(TypeError, match="Invalid input*"):
         _parse_silouette_configs(test_data_dir.as_posix())
@@ -40,8 +40,8 @@ def test_parse_silouette_configs_type_error_folder(test_data_dir):
 
 def test_parse_silouette_configs_type_error_int():
     """
-    Unit test for _parse_silouette_configs - test that it raises TypeError with
-    expected message when passed an input that is not a list or str.
+    Unit test for _parse_silouette_configs - test that it raises TypeError with expected
+    message when passed an input that is not a list or str.
     """
     with pytest.raises(TypeError, match="Invalid type*"):
         _parse_silouette_configs(1)
