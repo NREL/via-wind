@@ -80,6 +80,7 @@ def run(merge_directory, out_dir, max_workers=None, _local=True):
         2: Low Visual Impact
         3: Moderate Visual Impact
         4: High Visual Impact
+        5: Very High Visual Impact
 
     Parameters
     ----------
