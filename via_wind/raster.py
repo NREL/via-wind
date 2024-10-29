@@ -295,8 +295,8 @@ def mosaic_block(
         min(col_offset + block_size, full_profile["width"]),
         min(row_offset + block_size, full_profile["height"]),
     ]
-    # add one extra row because of weird artifact that happens in the final row
-    # we trim this row off before writing the final output
+    # Add one extra row because of weird artifact that happens in the final row.
+    # Note: This row is trimmed off before writing the final output.
     block_bounds[3] += 1
 
     width = block_bounds[2] - block_bounds[0]

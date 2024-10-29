@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""via-wind GAPS command line interface"""
+"""via-wind GAPS Command Line Interface"""
 import logging
 
 from gaps.cli.cli import make_cli

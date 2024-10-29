@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Implements basic mechanics of setting up blender scene, camera, lighting, simplified
-turbine model, and obstruction. Exports resulting view from camera to an image.
+blender module
 """
 from pathlib import Path
 import warnings
@@ -80,7 +79,7 @@ def create_world():
 def create_sun(config):
     """
     Create and configure the Blender "sun", including setting its color, location,
-     angle, strength, and disabling shadows.
+    angle, strength, and disabling shadows.
 
     Parameters
     ----------
@@ -385,7 +384,6 @@ def set_camera_tracking(camera, track_to_obj):
     track_to_obj : bpy_types.Object
         Blender object to which the camera will track
     """
-    # set  camera to track rotors
     constraint = camera.constraints.new("TRACK_TO")
     constraint.target = track_to_obj
     constraint.track_axis = "TRACK_NEGATIVE_Z"

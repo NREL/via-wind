@@ -49,7 +49,7 @@ def check_files_match(pattern, dir_1_path, dir_2_path):
 
 def compare_images_approx(image_1_path, image_2_path, hash_size=12, max_diff_pct=0.25):
     """
-    Check if two images match approximately.
+    Check if two images match within a specified tolerance.
 
     Parameters
     ----------
@@ -62,15 +62,18 @@ def compare_images_approx(image_1_path, image_2_path, hash_size=12, max_diff_pct
         by default 12. Increase to make the check more precise, decrease to
         make it more approximate.
     max_diff_pct : float, optional
-        Tolerance for the amount of difference allowed, by default 0.05 (= 5%).
+        Tolerance for the amount of difference allowed, by default 0.25 (= 25%).
         Increase to allow for a larger delta between the image hashes, decrease
         to make the check stricter and require a smaller delta between the
         image hashes.
 
     Returns
     -------
-    bool
-        Returns true if the images match approximately, false if not.
+    tuple
+        Returns a tuple with two elements: the first element is a boolean indicating
+        whether the two images match within the specified tolerance parameters. The
+        second element is a float indicating the percent difference between the two
+        images.
     """
 
     expected_hash = imagehash.phash(Image.open(image_1_path), hash_size=hash_size)
@@ -88,7 +91,7 @@ def compare_images_approx(image_1_path, image_2_path, hash_size=12, max_diff_pct
 def compare_csv_data(csv_1, csv_2, **kwargs):
     """
     Compares the contents of two CSVs to make sure they match. Uses
-    pandas.testing.assert_frame_equal under the hood; kwargs will be passed
+    pandas.testing.assert_frame_equal under the hood; **kwargs will be passed
     to this function.
 
     Parameters

@@ -8,9 +8,8 @@ from via_wind.config import SilouettesConfig, TurbineParams, CameraParams
 def test_turbineparams_happy(turbine_params_dict):
     """
     Happy path unit test for TurbineParams class: load a valid dictionary of
-    turbine parameters
+    turbine parameters.
     """
-
     TurbineParams(turbine_params_dict)
 
 
@@ -56,9 +55,8 @@ def test_turbineparams_bad_subelement_dtype(turbine_params_dict):
 def test_cameraparams_happy(camera_params_dict):
     """
     Happy path unit test for CameraParams class: load a valid dictionary of
-    turbine parameters
+    camera parameters.
     """
-
     CameraParams(camera_params_dict)
 
 
@@ -91,7 +89,6 @@ def test_config_happy(test_config):
     Happy path unit test for Config() class. Confirm that it can load configuration from
     a valid JSON file
     """
-
     SilouettesConfig(test_config.as_posix())
 
 
@@ -99,7 +96,6 @@ def test_config_missing_value(test_data_dir):
     """
     Test that Config class raises a ValueError when a required parameter is missing.
     """
-
     with pytest.raises(ValueError) as excinfo:
         SilouettesConfig(
             test_data_dir.joinpath("configs", "bad_config_missing.json").as_posix()
@@ -112,7 +108,6 @@ def test_config_bad_dtype(test_data_dir):
     Test that Config class raises a TypeError when a required parameter is the wrong
     dtype.
     """
-
     with pytest.raises(TypeError) as excinfo:
         SilouettesConfig(
             test_data_dir.joinpath("configs", "bad_config_dtype.json").as_posix()
@@ -127,7 +122,6 @@ def test_config_bad_baseparams(test_data_dir):
     Test that Config class raises a TypeError when a dictionary is not provided
     for a BaseParameter attribute.
     """
-
     with pytest.raises(TypeError) as excinfo:
         SilouettesConfig(
             test_data_dir.joinpath("configs", "bad_config_baseparams.json").as_posix()

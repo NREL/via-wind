@@ -5,7 +5,7 @@ import pytest
 from via_wind.cli.fov import _parse_silouette_directories
 
 # note: only includes tests for _parse_silouette_directories. all other functionality
-# is tested through cli.test_cli.test_silouettes_happy
+# is tested through cli.test_cli.test_fov_happy
 
 
 def test_parse_silouette_directories_happy(test_data_dir):
@@ -61,7 +61,7 @@ def test_parse_silouette_directories_not_found_pattern(test_data_dir):
     """
     Unit test for _parse_silouette_directories - test that it raises a FileNotFoundError
     with expected message when passed an input folder pattern that does contain
-    any subdirectories
+    any subdirectories.
     """
     with pytest.raises(FileNotFoundError, match="Could not find any subdirectories*"):
         _parse_silouette_directories(

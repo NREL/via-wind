@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Batch calculate the percent field of view of the turbine silouettes
+image module
 """
 from imageio.v3 import imread
 

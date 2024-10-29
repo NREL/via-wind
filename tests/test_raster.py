@@ -14,10 +14,9 @@ from via_wind import raster
 
 def test_save_to_geotiff(raster_params):
     """
-    Unit test for save_to_geotiff() - test writing an array to a file and then
-    open the raster and compare to expcted attributes and data.
+    Unit test for save_to_geotiff() - test writing an array to a file and then open the
+    raster and compare to expcted attributes and data.
     """
-
     array = np.ones(raster_params["shape"], dtype="float32")
     array[0, :] = raster_params["nodata"]
 
@@ -54,10 +53,9 @@ def test_save_to_geotiff(raster_params):
 
 def test_save_to_geotiff_bad_dtype(raster_params):
     """
-    Unit test  for save_to_geotiff to ensure it raises a TypeError when
-    the input array has an invalid data type.
+    Unit test  for save_to_geotiff to ensure it raises a TypeError when the input array
+    has an invalid data type.
     """
-
     array = np.ones(raster_params["shape"], dtype="bool")
 
     with tempfile.TemporaryDirectory() as tempdir:
@@ -76,11 +74,9 @@ def test_save_to_geotiff_bad_dtype(raster_params):
 
 def test_get_raster_info(raster_params):
     """
-    Unit test for get_raster_info - write an output raster using
-    save_to_geotiff() then check that get_raster_info() returns the correct
-    crs and resolution.
+    Unit test for get_raster_info - write an output raster using save_to_geotiff() then
+    check that get_raster_info() returns the correct crs and resolution.
     """
-
     array = np.ones(raster_params["shape"], dtype="int8")
     with tempfile.TemporaryDirectory() as tempdir:
         output_directory = Path(tempdir)
@@ -103,7 +99,6 @@ def test_get_raster_info_bad_resolution(raster_params):
     Test that get_raster_info() raises a ValueError when reading a raster that has
     different horizontal and vertical resolutions.
     """
-
     array = np.ones(raster_params["shape"], dtype="int8")
     affine = raster_params["affine"]
     new_affine = rasterio.Affine(35, affine.b, affine.c, affine.d, affine.e, affine.f)
@@ -192,7 +187,6 @@ def test_merge_tifs(test_data_dir):
     Unit test for merge_tifs: test that it produces the correct output when provided
     known inputs.
     """
-
     tif_path = test_data_dir.joinpath(
         "viewsheds", "expected_results", "fov-pct_gid1.tif"
     )

@@ -18,7 +18,6 @@ def test_calc_viewshed_shape():
     Unit test for calc_viewshed_shape() - test that it produces the expected
     output when passed a known input.
     """
-
     max_distance_km = 2
     resolution_m = 30
     expected_shape = (135, 135)
@@ -33,7 +32,6 @@ def test_run_viewshed(raster_params):
     run_viewshed() produces the expected output - visible pixels everywhere within
     the maximum distance.
     """
-
     max_distance_km = 2
     raster_params["shape"] = visibility.calc_viewshed_shape(
         max_distance_km, raster_params["resolution"]
@@ -79,7 +77,6 @@ def test_check_columns():
     Unit test for check_columns() - make sure it passes for valid inputs and raises
     correct errors when columns are either missing or the wrong dtype.
     """
-
     df = pd.DataFrame()
     df["a"] = np.arange(0, 5).astype(float)
     df["b"] = ["b"] * 5
@@ -110,7 +107,6 @@ def test_get_obstruction_heights():
     Unit test for get_obstruction_heights() - tests some known inputs and expected
     outputs.
     """
-
     rotor_diameter = 80
     hub_height = 80
     obstruction_interval = 20

@@ -24,7 +24,7 @@ LOGGER = logging.getLogger(__name__)
 
 def _log_inputs(config):
     """
-    Emit log messages summarizing user inputs
+    Emit log messages summarizing user inputs.
 
     Parameters
     ----------
@@ -48,6 +48,8 @@ def _preprocessor(config, job_name, log_directory, verbose):
     job_name : str
         Name of `job being run. Derived from the name of the folder containing the
         user configuration file.
+    log_directory : pathlib.Path
+        Path to directory for output log files.
     verbose : bool
         Flag to signal ``DEBUG`` verbosity (``verbose=True``).
 
@@ -78,6 +80,7 @@ def run(merge_directory, out_dir, max_workers=None, _local=True):
         2: Low Visual Impact
         3: Moderate Visual Impact
         4: High Visual Impact
+        5: Very High Visual Impact
 
     Parameters
     ----------
