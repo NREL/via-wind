@@ -41,7 +41,7 @@ def test_split_turbines_happy(nodes, expected_batch_size, expected_skip_features
 
     with tempfile.TemporaryDirectory() as tempdir:
         tempdir_path = Path(tempdir)
-        df = gpd.GeoDataFrame(geometry=[geometry.Point(0, 0)] * 100)
+        df = gpd.GeoDataFrame(geometry=[geometry.Point(0, 0)] * 100, crs="EPSG:4326")
         out_gpkg = tempdir_path.joinpath("points.gpkg")
         df.to_file(out_gpkg)
 
