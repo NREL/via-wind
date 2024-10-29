@@ -10,8 +10,6 @@ from pathlib import Path
 
 from rex.utilities import init_logger as rex_init_logger, LOGGERS
 
-LOG_FORMAT = "%(levelname)s - %(asctime)s [%(filename)s:%(lineno)d] : %(message)s"
-
 
 def init_logger(name, log_directory, module, verbose=False, node=False, stream=False):
     """

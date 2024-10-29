@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-For loading/handling configuration files
+config module
 """
 from numbers import Number
 import json
