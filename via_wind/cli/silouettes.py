@@ -85,7 +85,7 @@ def _parse_silouette_configs(silouette_configs):
 
 def _log_inputs(config):
     """
-    Emit log messages summarizing user inputs
+    Emit log messages summarizing user inputs.
 
     Parameters
     ----------
@@ -113,6 +113,8 @@ def _preprocessor(config, job_name, log_directory, verbose):
     job_name : str
         Name of `job being run. Derived from the name of the folder containing the
         user configuration file.
+    log_directory : pathlib.Path
+        Path to directory for output log files.
     verbose : bool
         Flag to signal ``DEBUG`` verbosity (``verbose=True``).
 
@@ -150,10 +152,14 @@ def run(
     ----------
     silouette_configs : List[str]
         List of paths to multiple configuration JSON files.
-    out_fpath : str
-        Output folder to which simulated turbine silouettes will be saved. If the folder
-        does not exist, it will be created. If the folder does exist, existing files may
+    out_dir : str
+        Output parent directory. Results will be saved to a subfolder named
+        "silouettes" within this parent directory. If the subfolder does not
+        exist, it will be created. If the subfolder does exist, existing files may
         be overwritten.
+    job_name : str
+        Name of job being run. Derived from the name of the folder containing the
+        user configuration file.
     _log_directory : str
         Path to log output directory.
     _verbose : bool

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """via-wind"""
 from pathlib import Path
 

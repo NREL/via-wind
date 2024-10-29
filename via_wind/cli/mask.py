@@ -22,7 +22,7 @@ LOGGER = logging.getLogger(__name__)
 
 def _log_inputs(config):
     """
-    Emit log messages summarizing user inputs
+    Emit log messages summarizing user inputs.
 
     Parameters
     ----------
@@ -46,6 +46,8 @@ def _preprocessor(config, job_name, log_directory, verbose):
     job_name : str
         Name of `job being run. Derived from the name of the folder containing the
         user configuration file.
+    log_directory : pathlib.Path
+        Path to directory for output log files.
     verbose : bool
         Flag to signal ``DEBUG`` verbosity (``verbose=True``).
 
