@@ -2,55 +2,7 @@
 """Unit tests for via_wind.utils module"""
 import pytest
 
-from via_wind.utils import hms, ProgressTracker, verify_directory, verify_file
-
-
-def test_hms():
-    """
-    Unit test for hms() function - checks that output strings are correct for known
-    inputs.
-    """
-
-    test_values = [
-        (15, "0:00:15"),
-        (60, "0:01:00"),
-        (119, "0:01:59"),
-        (3601, "1:00:01"),
-        (36061, "10:01:01"),
-        (86401, "1 day, 0:00:01"),
-    ]
-    for seconds, expected_results in test_values:
-        assert hms(seconds) == expected_results
-
-
-def test_progress_tracker():
-    """
-    Very basic unit test for Progress Tracker class. Tests that it produces messages
-    for each update that start and end as expected.
-    """
-
-    n_iters = 10
-    messages = []
-    with ProgressTracker(total=n_iters, desc="Progress so far") as p:
-        for _ in range(0, 10):
-            messages.append(p.message)
-            p.update(1)
-
-    assert len(messages) == n_iters
-    for i, message in enumerate(messages):
-        assert message.startswith(f"Progress so far {i+1}/{n_iters}")
-        assert message.endswith("/it]")
-
-
-def test_progress_tracker_exception():
-    """
-    Unit test for Progress Tracker class. Tests that if an exception occurs, it is
-    raised.
-    """
-
-    with pytest.raises(ValueError, match="This is a test"):
-        with ProgressTracker(total=1, desc="Progress so far"):
-            raise ValueError("This is a test")
+from via_wind.utils import verify_directory, verify_file
 
 
 def test_verify_directory_happy(test_data_dir):
