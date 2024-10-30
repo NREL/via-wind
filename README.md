@@ -23,24 +23,11 @@ This software is optimized for use in high-performance computing environments to
     ```
     Note: You may choose an alternative virtual environment solution; however, installation of dependencies is not guaranteed to work.
 
-4. Install `blender` Python module (`bpy`):
-    - Option 1: Use builds from blender.org:
-        - Download`bpy` build for your OS from https://builder.blender.org/download/bpy/
-        - Unzip the wheel from the downloaded zip file
-        - Install `bpy` from wheel:
-            ```commandline
-            pip install <path-to-your-bpy-build.whl>
-            # e.g., pip install bpy-3.5.0-cp310-cp310-manylinux_2_28_x86_64.whl
-            ```
-        - Note: For linux, the wheel file may need to be renamed to work (e.g., replace "manylinux_2_28_" with "linux_"). See: https://stackoverflow.com/a/52661110 for related discussion.
-    - Option 2: Build `bpy` module from source
-        - See instructions here: https://developer.blender.org/docs/handbook/building_blender/python_module/#building-blender-as-a-python-module
-
-5. Install `via_wind` package:
+4. Install `via_wind` package:
     - For users: `pip install .`
     - For developers: `pip install -e '.[dev]'`
 
-6. **Developers Only** Install pre-commit
+5. **Developers Only** Install pre-commit
     ```commandline
     pre-commit install
     ```
